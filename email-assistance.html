@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Assistance</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .breadcrumb-item a {
+            text-decoration: none;
+        }
+        .heading{
+            background-color: #dc143c13;
+
+        }
+
+        .hero-heading {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .hero-subtext {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-top: 10px;
+        }
+
+        /* image section */
+        .image {
+            width: 100%;
+            height: 500px;
+        }
+
+        /* next section */
+
+
+        .info-section {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .info-section h6 {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 5px;
+        }
+
+        .info-section p {
+            margin-bottom: 10px;
+        }
+
+        .btn-green {
+            background-color: #dc143c;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-green:hover {
+            background-color: #dc143c;
+        }
+
+        .overview h3,
+        .challenge h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .overview p,
+        .challenge p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #6c757d;
+        }
+
+        .tags span {
+            display: inline-block;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            font-size: 0.9rem;
+            margin-right: 10px;
+            border-radius: 5px;
+            color: #495057;
+            background-color: #fff;
+        }
+
+        .tags .tag {
+            display: inline-block;
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            color: #495057;
+            background-color: #fff;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tags .tag:hover {
+            background-color: #dc143c;
+            color: #fff;
+            border-color: #dc143c;
+            transform: translateY(-3px);
+        }
+
+        .challenge ul {
+            padding-left: 20px;
+        }
+
+        .challenge li {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+
+        /* next section */
+        .row {
+            margin-bottom: 2rem;
+        }
+
+        /* Hover effect for the image container */
+        .hover-card:hover {
+            transform: translateY(-2px);
+            /* Slight lift on hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            /* Adds a subtle shadow */
+        }
+
+        /* next section */
+        .result-section {
+            padding: 50px 0;
+            background-color: #dc143c0e;
+            /* border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd; */
+        }
+
+        .result-text {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .result-stats {
+            display: flex;
+            justify-content: space-between;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #777;
+            margin-top: 10px;
+        }
+
+        .view-project {
+            margin-top: 30px;
+        }
+
+        .view-project a {
+            color: #dc143c;
+            text-decoration: none;
+        }
+
+        .view-project a:hover {
+            text-decoration: underline;
+        } 
+        
+        /* next section */
+        .testimonial {
+            padding: 20px;
+            background-color: #dc143c0e;
+        
+            /* border: 1px solid #ddd; */
+            border-radius: 5px;
+            /* background-color: #f8f8f8; */
+        }
+
+        .testimonial-quote {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .testimonial-author-name {
+            font-weight: bold;
+        }
+
+        .testimonial-author-title {
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center mt-5 heading">
+        <!-- Heading and Subtext -->
+        <h1 class="hero-heading">Email Assistance</h1>
+        <p class="hero-subtext">
+            Your smart Email Companion
+        </p>
+    </div>
+
+    <!-- image section -->
+    <section class="container mt-5">
+        <img class="img-fluid rounded image"
+            src="https://onesignal.com/blog/content/images/2023/07/how-to-verify-and-valdiate-email-addresses-before-you-send.png"
+            alt="Hero Image">
+    </section>
+
+    <!-- next section -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Left Section -->
+            <div class="col-md-4">
+                <div class="info-section">
+                    <h6>Client</h6>
+                    <p>Webestica Webflow Agency</p>
+                    <h6>Headquarters</h6>
+                    <p>489 Depot Road Midland</p>
+                    <h6>Industry</h6>
+                    <p>E-commerce</p>
+                    <h6>Founders</h6>
+                    <p>Emma Watson, Maria Smith</p>
+                    <h6>Services</h6>
+                    <p>Email marketing, Product design & Content marketing</p>
+                    <h6>Time spent</h6>
+                    <p>2023, 4 months</p>
+                    <a href="#" class="btn-green mt-3">View project website</a>
+                </div>
+            </div>
+            <!-- <div class="col-md-1"></div> -->
+
+            <!-- Right Section -->
+            <div class="col-md-7">
+                <div class="overview">
+                    <h3>Overview</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, harum! Lorem ipsum, dolor sit
+                        amet consectetur adipisicing elit.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat repellat voluptatibus
+                        distinctio! Asperiores ducimus dicta quos quam nam sunt, in perferendis quis ab ea, odit maxime
+                        earum? Excepturi, facere reiciendis!
+                    </p>
+                    <div class="tags mt-3">
+                        <span class="tag">Branding</span>
+                        <span class="tag">Packaging</span>
+                        <span class="tag">UI/UX design</span>
+                    </div>
+                </div>
+
+                <div class="challenge mt-5">
+                    <h3>The Challenge</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus nostrum quaerat, odit
+                        voluptate vitae minima at possimus culpa neque necessitatibus voluptatem sequi debitis illo
+                        voluptatum suscipit, ipsam consequatur eius veniam quam rem quibusdam eum qui eaque sit.
+                        Tempora, fugiat eaque.
+                    </p>
+                    <ul class="mt-3">
+                        <li>Maintained Windows Servers</li>
+                        <li>Supported Windows workstations</li>
+                        <li>Set up a rotation schedule and set an anti-virus system</li>
+                        <li>Designed machines/servers and trained employees</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- next section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="hover-card">
+                    <img src="./media/img1.jpg" alt="Business Cards" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="hover-card">
+                    <img src="./media/img2.jpg" alt="Letterhead and Envelope" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="hover-card">
+                    <img src="./media/img3.jpg" alt="Pumpkins" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- next section -->
+    <div class="container">
+        <div class="row result-section">
+            <div class="col-md-6">
+                <h2>Result</h2>
+                <p class="result-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi rerum modi dolorem obcaecati explicabo asperiores minus, quas consequatur, soluta, eius voluptates beatae odio fugiat iste optio facere quidem veritatis fugit.
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quibusdam illum a inventore voluptas enim ullam quisquam impedit at mollitia labore nemo reprehenderit aspernatur earum provident, recusandae eos iste praesentium!
+                </p>
+                <div class="view-project">
+                    <a href="#">View project website</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="result-stats mt-5">
+                    <div class="stat">
+                        22%
+                        <div class="stat-label">Increase in time spent on website</div>
+                    </div>
+                    <div class="stat">
+                        4.5M
+                        <div class="stat-label">View this project got across our social media network</div>
+                    </div>
+                    <div class="stat">
+                        $12.8M
+                        <div class="stat-label">Total raised in funding so far</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- next section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="testimonial">
+                    <p class="testimonial-quote">
+                        "Too months nay end change relied who beauty wishes matter. Shew of John real park so rest we on. Ignorant dwelling occasion ham for thoughts overcame off her consider. Polite it elinor is depend."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQABqQIdskCD9BK0I81EbVfV9tTz320XvJ35A&s" alt="Emma Watson"> 
+                        <div>
+                            <span class="testimonial-author-name">Emma Watson</span><br>
+                            <span class="testimonial-author-title">CEO, Co-founder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
